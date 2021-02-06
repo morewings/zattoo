@@ -26,7 +26,7 @@ const adjustVisibleUp = ({row, start, end, callback}) => activeChannel => {
 
 export const useSetVisibleChannels = row => {
   const [start, end] = useVisibleChannelsRange();
-  const {setVisibleChannels, setVisibleFavorites} = useActions();
+  const {setVisibleChannels} = useActions();
   return {
     adjustVisibleDown: adjustVisibleDown({
       row,

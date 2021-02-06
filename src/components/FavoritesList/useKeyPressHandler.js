@@ -2,11 +2,11 @@ import {nextRow, prevRow} from 'utils/operations';
 import {
   useActiveFavorite,
   useCheckIsFavorite,
-  useSetActive,
+  useActiveChannelActions,
   useSetVisibleFavorites,
   useFavoritePointer,
+  useFavoriteChannelActions,
 } from 'features/channels';
-import {useActions} from 'features/channels/actionCreators';
 
 const ROW = 1;
 
@@ -14,8 +14,8 @@ export const useKeyPressHandler = () => {
   const activeFavorite = useActiveFavorite();
   const {getIndex} = useFavoritePointer();
   const activeFavoriteIndex = getIndex(activeFavorite);
-  const {setFavorite} = useSetActive();
-  const {addFavorite, deleteFavorite} = useActions();
+  const {setFavorite} = useActiveChannelActions();
+  const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
   const isFavorite = useCheckIsFavorite(activeFavorite);
 
   const {adjustVisibleDown, adjustVisibleUp} = useSetVisibleFavorites(ROW);

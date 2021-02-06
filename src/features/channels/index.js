@@ -13,6 +13,9 @@ export {
   useCheckIsFavorite,
   useFavoritePointer,
 } from './selectors';
-export {useSetVisibleChannels, useSetVisibleFavorites} from './useSetVisible';
-export {useSetActive} from './useSetActive';
-export {useFavoriteActions} from './useFavoriteActions';
+export {
+  useSetVisibleChannels,
+  useSetVisibleFavorites,
+} from './useVisibleChannelsActions';
+export {useActiveChannelActions} from './useActiveChannelActions';
+export {useFavoriteChannelActions} from './useFavoriteChannelActions';
