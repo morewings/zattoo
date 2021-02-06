@@ -36,7 +36,10 @@ export const useFavoriteActions = () => {
   };
 
   const deleteFavorite = favorite => {
-    const nextFavoriteIndex = favorites.length - VISIBLE_AMOUNT;
+    const nextFavoriteIndex =
+      favorites.length - VISIBLE_AMOUNT >= 0
+        ? favorites.length - VISIBLE_AMOUNT
+        : 0;
     adjustVisibleUp(nextFavoriteIndex);
     deleteAction(favorite);
   };

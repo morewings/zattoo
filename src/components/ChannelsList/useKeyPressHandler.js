@@ -5,8 +5,8 @@ import {
   useChannelPointer,
   useSetVisibleChannels,
   useSetActive,
+  useFavoriteActions,
 } from 'features/channels';
-import {useActions} from 'features/channels/actionCreators';
 
 const isEven = number => number % 2 === 0;
 
@@ -17,7 +17,7 @@ export const useKeyPressHandler = () => {
   const {getIndex} = useChannelPointer();
   const activeChannelIndex = getIndex(activeChannel);
   const {setChannel} = useSetActive();
-  const {addFavorite, deleteFavorite} = useActions();
+  const {addFavorite, deleteFavorite} = useFavoriteActions();
   const isFavorite = useCheckIsFavorite(activeChannel);
 
   const {adjustVisibleDown, adjustVisibleUp} = useSetVisibleChannels(ROW);
