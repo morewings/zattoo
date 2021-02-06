@@ -16,7 +16,7 @@ export const ChannelsList = () => {
   const activeChannel = useActiveChannel();
   const activePanel = useActivePanel();
   const {handleChannelsKeyPress} = useKeyPressHandler();
-  const {setChannel} = useModifyActiveChannel();
+  const {setActiveChannelByIndex} = useModifyActiveChannel();
   const setActivePanel = useModifyActivePanel();
   const {getIndex} = useChannelPointer();
   const ref = useRef();
@@ -46,7 +46,7 @@ export const ChannelsList = () => {
       className={classes.channelsList}>
       {visible.map(({id}) => (
         <Channel
-          onSelect={setChannel}
+          onSelect={setActiveChannelByIndex}
           rowLength={2}
           id={id}
           index={getIndex(id)}

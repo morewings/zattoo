@@ -31,8 +31,7 @@ export const useModifyActiveChannel = () => {
     });
   };
 
-  const setChannel = channelIndex => {
-    console.log('channelIndex', channelIndex);
+  const setActiveChannelByIndex = channelIndex => {
     const isValid = channelIndex >= 0 && channelIndex < channelLength;
     const channelId = getChannelId(channelIndex);
     if (isValid) {
@@ -49,7 +48,7 @@ export const useModifyActiveChannel = () => {
   };
 
   return {
-    setChannel,
+    setActiveChannelByIndex,
     setFavorite,
   };
 };

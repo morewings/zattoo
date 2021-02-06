@@ -16,7 +16,7 @@ export const useKeyPressHandler = () => {
   const activeChannel = useActiveChannel();
   const {getIndex} = useChannelPointer();
   const activeChannelIndex = getIndex(activeChannel);
-  const {setChannel} = useModifyActiveChannel();
+  const {setActiveChannelByIndex} = useModifyActiveChannel();
   const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
   const isFavorite = useCheckIsFavorite(activeChannel);
 
@@ -25,26 +25,26 @@ export const useKeyPressHandler = () => {
     switch (key) {
       case 'ArrowUp': {
         const nextChannelIndex = prevRow(ROW, activeChannelIndex);
-        setChannel(nextChannelIndex);
+        setActiveChannelByIndex(nextChannelIndex);
         adjustVisibleUp(nextChannelIndex);
         break;
       }
       case 'ArrowDown': {
         const nextChannelIndex = nextRow(ROW, activeChannelIndex);
-        setChannel(nextChannelIndex);
+        setActiveChannelByIndex(nextChannelIndex);
         adjustVisibleDown(nextChannelIndex);
         break;
       }
       case 'ArrowRight': {
         const nextChannelIndex = activeChannelIndex + 1;
-        setChannel(nextChannelIndex);
+        setActiveChannelByIndex(nextChannelIndex);
         adjustVisibleDown(nextChannelIndex);
         break;
       }
       case 'ArrowLeft': {
         const nextChannelIndex = activeChannelIndex - 1;
         if (!isEven(activeChannelIndex)) {
-          setChannel(nextChannelIndex);
+          setActiveChannelByIndex(nextChannelIndex);
           adjustVisibleUp(nextChannelIndex);
         } else {
           console.log('switch to favorites');
