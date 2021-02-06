@@ -5,6 +5,7 @@ import {
   useActivePanel,
   useModifyActivePanel,
   useModifyActiveChannel,
+  useFavoritePointer,
 } from 'features/channels';
 import {Channel} from 'components/Channel';
 import {useKeyPressHandler} from './useKeyPressHandler';
@@ -14,6 +15,7 @@ export const FavoritesList = () => {
   const favorites = useVisibleFavorites();
   const activeChannel = useActiveFavorite();
   const activePanel = useActivePanel();
+  const {getIndex} = useFavoritePointer();
   const {handleChannelsKeyPress} = useKeyPressHandler();
   const {setActiveFavoriteByIndex} = useModifyActiveChannel();
   const setActivePanel = useModifyActivePanel();
@@ -42,12 +44,12 @@ export const FavoritesList = () => {
       role="button"
       onKeyDown={handleKeyPress}
       className={classes.favoritesList}>
-      {favorites.map(({id}, i) => (
+      {favorites.map(({id}) => (
         <Channel
           onSelect={setActiveFavoriteByIndex}
           rowLength={1}
           id={id}
-          index={i}
+          index={getIndex(id)}
           key={id}
           isActive={activePanel === 'favoritesList' && activeChannel === id}
         />
