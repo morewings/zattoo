@@ -1,5 +1,5 @@
 import {useDispatch} from 'react-redux';
-import {ADD_FAVORITE, DELETE_FAVORITE} from 'features/channels/actionTypes';
+import {ADD_FAVORITE, DELETE_FAVORITE} from './actionTypes';
 import {useAdjustVisibleFavorites} from './useAdjustVisible';
 import {useFavorites} from './selectors';
 

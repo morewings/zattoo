@@ -1,6 +1,7 @@
+import {useDispatch} from 'react-redux';
 import {nextRow, prevRow} from 'utils/operations';
 import {useVisibleChannelsRange, useVisibleFavoritesRange} from './selectors';
-import {useActions} from './actionCreators';
+import {SET_VISIBLE_CHANNELS, SET_VISIBLE_FAVORITES} from './actionTypes';
 
 const MARGIN = 2;
 
@@ -25,8 +26,14 @@ const adjustVisibleUp = ({row, start, end, callback}) => activeChannel => {
 };
 
 export const useAdjustVisibleChannels = row => {
+  const dispatch = useDispatch();
   const [start, end] = useVisibleChannelsRange();
-  const {setVisibleChannels} = useActions();
+  const setVisibleChannels = visibleRange => {
+    dispatch({
+      type: SET_VISIBLE_CHANNELS,
+      payload: visibleRange,
+    });
+  };
   return {
     adjustVisibleDown: adjustVisibleDown({
       row,
@@ -44,8 +51,14 @@ export const useAdjustVisibleChannels = row => {
 };
 
 export const useAdjustVisibleFavorites = row => {
+  const dispatch = useDispatch();
   const [start, end] = useVisibleFavoritesRange();
-  const {setVisibleFavorites} = useActions();
+  const setVisibleFavorites = visibleRange => {
+    dispatch({
+      type: SET_VISIBLE_FAVORITES,
+      payload: visibleRange,
+    });
+  };
   return {
     adjustVisibleDown: adjustVisibleDown({
       row,
