@@ -14,8 +14,8 @@ export {
   useFavoritePointer,
 } from './selectors';
 export {
-  useSetVisibleChannels,
-  useSetVisibleFavorites,
+  useAdjustVisibleChannels,
+  useAdjustVisibleFavorites,
 } from './useAdjustVisible';
 export {useModifyActiveChannel} from './useModifyActiveChannel';
 export {useModifyFavoriteChannels} from './useModifyFavoriteChannels';

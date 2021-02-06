@@ -3,7 +3,7 @@ import {
   useActiveChannel,
   useCheckIsFavorite,
   useChannelPointer,
-  useSetVisibleChannels,
+  useAdjustVisibleChannels,
   useModifyActiveChannel,
   useModifyFavoriteChannels,
 } from 'features/channels';
@@ -20,7 +20,7 @@ export const useKeyPressHandler = () => {
   const {addFavorite, deleteFavorite} = useModifyFavoriteChannels();
   const isFavorite = useCheckIsFavorite(activeChannel);
 
-  const {adjustVisibleDown, adjustVisibleUp} = useSetVisibleChannels(ROW);
+  const {adjustVisibleDown, adjustVisibleUp} = useAdjustVisibleChannels(ROW);
   const handleChannelsKeyPress = key => {
     switch (key) {
       case 'ArrowUp': {

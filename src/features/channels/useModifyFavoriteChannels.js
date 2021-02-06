@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux';
 import {ADD_FAVORITE, DELETE_FAVORITE} from 'features/channels/actionTypes';
-import {useSetVisibleFavorites} from './useAdjustVisible';
+import {useAdjustVisibleFavorites} from './useAdjustVisible';
 import {useFavorites} from './selectors';
 
 const ROW = 1;
@@ -10,7 +10,7 @@ const VISIBLE_AMOUNT = 8;
 export const useModifyFavoriteChannels = () => {
   const dispatch = useDispatch();
   const favorites = useFavorites();
-  const {adjustVisibleDown, adjustVisibleUp} = useSetVisibleFavorites(
+  const {adjustVisibleDown, adjustVisibleUp} = useAdjustVisibleFavorites(
     ROW,
     'favorite'
   );

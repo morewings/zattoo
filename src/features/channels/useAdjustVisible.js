@@ -24,7 +24,7 @@ const adjustVisibleUp = ({row, start, end, callback}) => activeChannel => {
   }
 };
 
-export const useSetVisibleChannels = row => {
+export const useAdjustVisibleChannels = row => {
   const [start, end] = useVisibleChannelsRange();
   const {setVisibleChannels} = useActions();
   return {
@@ -43,7 +43,7 @@ export const useSetVisibleChannels = row => {
   };
 };
 
-export const useSetVisibleFavorites = row => {
+export const useAdjustVisibleFavorites = row => {
   const [start, end] = useVisibleFavoritesRange();
   const {setVisibleFavorites} = useActions();
   return {
