@@ -12,14 +12,14 @@ import starOutline from 'images/star_outline.svg';
 import {useCheckIsFavorite} from 'features/channels/selectors';
 import classes from './Channel.module.css';
 
-export const Channel = ({nr, id, rowLength, onSelect, isActive}) => {
+export const Channel = ({index, id, rowLength, onSelect, isActive}) => {
   const logoUrl = useChannelLogo(id);
   const name = useChannelName(id);
   const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
   const isFavorite = useCheckIsFavorite(id);
 
   const handleChannelClick = () => {
-    onSelect(id);
+    onSelect(index);
   };
 
   const handleChannelStarClick = () => {
@@ -49,7 +49,7 @@ export const Channel = ({nr, id, rowLength, onSelect, isActive}) => {
       ref={setRef}
       style={style}
       className={classes.channel}>
-      <div className={classes.number}>{transformNumber(nr)}</div>
+      <div className={classes.number}>{transformNumber(index)}</div>
       <div className={classes.logo}>
         <img src={logoUrl} alt={name} />
       </div>
@@ -65,7 +65,7 @@ export const Channel = ({nr, id, rowLength, onSelect, isActive}) => {
 };
 
 Channel.propTypes = {
-  nr: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
   rowLength: PropTypes.number.isRequired,

@@ -32,6 +32,7 @@ export const useModifyActiveChannel = () => {
   };
 
   const setChannel = channelIndex => {
+    console.log('channelIndex', channelIndex);
     const isValid = channelIndex >= 0 && channelIndex < channelLength;
     const channelId = getChannelId(channelIndex);
     if (isValid) {

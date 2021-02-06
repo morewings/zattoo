@@ -49,7 +49,7 @@ export const ChannelsList = () => {
           onSelect={setChannel}
           rowLength={2}
           id={id}
-          nr={getIndex(id)}
+          index={getIndex(id)}
           key={id}
           isActive={activePanel === 'channelsList' && activeChannel === id}
         />

@@ -42,12 +42,12 @@ export const FavoritesList = () => {
       role="button"
       onKeyDown={handleKeyPress}
       className={classes.favoritesList}>
-      {favorites.map(({id, index}, i) => (
+      {favorites.map(({id}, i) => (
         <Channel
           onSelect={setFavorite}
           rowLength={1}
           id={id}
-          nr={index}
+          index={i}
           key={id}
           isActive={activePanel === 'favoritesList' && activeChannel === id}
         />
