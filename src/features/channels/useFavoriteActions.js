@@ -1,0 +1,45 @@
+import {useDispatch} from 'react-redux';
+import {ADD_FAVORITE, DELETE_FAVORITE} from 'features/channels/actionTypes';
+import {useSetVisibleFavorites} from './useSetVisible';
+import {useFavorites} from './selectors';
+
+const ROW = 1;
+
+const VISIBLE_AMOUNT = 8;
+
+export const useFavoriteActions = () => {
+  const dispatch = useDispatch();
+  const favorites = useFavorites();
+  const {adjustVisibleDown, adjustVisibleUp} = useSetVisibleFavorites(
+    ROW,
+    'favorite'
+  );
+
+  const addAction = favorite => {
+    dispatch({
+      type: ADD_FAVORITE,
+      payload: favorite,
+    });
+  };
+
+  const deleteAction = favorite => {
+    dispatch({
+      type: DELETE_FAVORITE,
+      payload: favorite,
+    });
+  };
+
+  const addFavorite = favorite => {
+    const nextFavoriteIndex = favorites.length - 1;
+    adjustVisibleDown(nextFavoriteIndex);
+    addAction(favorite);
+  };
+
+  const deleteFavorite = favorite => {
+    const nextFavoriteIndex = favorites.length - VISIBLE_AMOUNT;
+    adjustVisibleUp(nextFavoriteIndex);
+    deleteAction(favorite);
+  };
+
+  return {addFavorite, deleteFavorite};
+};

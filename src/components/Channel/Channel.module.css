@@ -1,0 +1,62 @@
+.channel {
+  --rowLength: 2;
+  --channelWidth: calc(100% / var(--rowLength));
+
+  align-items: center;
+  background: var(--bgColorLigher);
+  border: 1px solid var(--borderColor);
+  box-sizing: border-box;
+  display: flex;
+  height: 72px;
+  margin: 1px;
+  padding: 0 16px;
+  width: calc(var(--channelWidth) - 2px);
+}
+
+.channel:focus {
+  outline: none;
+}
+
+.number {
+  background: var(--bgColor);
+  border-radius: 5px;
+  color: var(--mutedTextColor);
+  font-size: 19px;
+  font-weight: bold;
+  height: 19px;
+  padding: 5px 9px;
+}
+
+.logo {
+  margin: 0 16px;
+}
+
+.name {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.star {
+  background: transparent;
+  border: none;
+  height: 24px;
+  margin-left: auto;
+  padding: 0;
+  width: 24px;
+}
+
+.star:focus,
+.star:active {
+  outline: none;
+}
+
+.star img {
+  height: 100%;
+  width: 100%;
+}

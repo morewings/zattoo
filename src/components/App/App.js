@@ -1,12 +1,11 @@
 import React from 'react';
-import Counter from '../Counter';
-import Random from '../Random';
+import {Dashboard} from 'components/Dashboard';
+
 import classes from './App.module.css';
 
 const App = () => (
   <div className={classes.container}>
-    <Counter />
-    <Random />
+    <Dashboard />
   </div>
 );
 

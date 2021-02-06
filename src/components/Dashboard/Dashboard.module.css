@@ -1,0 +1,28 @@
+.dashboard {
+  --innerPadding: 27px;
+
+  align-items: stretch;
+  display: flex;
+  height: 100%;
+}
+
+.favorites {
+  border-right: 1px solid var(--borderColor);
+  overflow: hidden;
+  padding-right: var(--innerPadding);
+  width: 34%;
+}
+
+.allChannels {
+  height: 100%;
+  overflow: hidden;
+  padding-left: var(--innerPadding);
+  width: 66%;
+}
+
+.header {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 14px 0 32px;
+}

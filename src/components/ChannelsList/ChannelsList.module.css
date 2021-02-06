@@ -1,0 +1,8 @@
+.channelsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.channelsList:focus {
+  outline: none;
+}
