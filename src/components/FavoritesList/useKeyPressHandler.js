@@ -2,7 +2,7 @@ import {nextRow, prevRow} from 'utils/operations';
 import {
   useActiveFavorite,
   useCheckIsFavorite,
-  useActiveChannelActions,
+  useModifyActiveChannel,
   useSetVisibleFavorites,
   useFavoritePointer,
   useFavoriteChannelActions,
@@ -14,7 +14,7 @@ export const useKeyPressHandler = () => {
   const activeFavorite = useActiveFavorite();
   const {getIndex} = useFavoritePointer();
   const activeFavoriteIndex = getIndex(activeFavorite);
-  const {setFavorite} = useActiveChannelActions();
+  const {setFavorite} = useModifyActiveChannel();
   const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
   const isFavorite = useCheckIsFavorite(activeFavorite);
 

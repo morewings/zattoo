@@ -1,10 +1,11 @@
 import React, {useRef} from 'react';
 import {
   useVisibleChannels,
-  useChannelActions,
   useActiveChannel,
   useActivePanel,
   useChannelPointer,
+  useModifyActivePanel,
+  useModifyActiveChannel,
 } from 'features/channels';
 import {Channel} from 'components/Channel';
 import {useKeyPressHandler} from './useKeyPressHandler';
@@ -15,7 +16,8 @@ export const ChannelsList = () => {
   const activeChannel = useActiveChannel();
   const activePanel = useActivePanel();
   const {handleChannelsKeyPress} = useKeyPressHandler();
-  const {setActivePanel, setActiveChannel} = useChannelActions();
+  const {setChannel} = useModifyActiveChannel();
+  const setActivePanel = useModifyActivePanel();
   const {getIndex} = useChannelPointer();
   const ref = useRef();
   const handleMouseEnter = () => {
@@ -44,7 +46,7 @@ export const ChannelsList = () => {
       className={classes.channelsList}>
       {visible.map(({id}) => (
         <Channel
-          onSelect={setActiveChannel}
+          onSelect={setChannel}
           rowLength={2}
           id={id}
           nr={getIndex(id)}

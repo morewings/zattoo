@@ -4,7 +4,7 @@ import {
   useCheckIsFavorite,
   useChannelPointer,
   useSetVisibleChannels,
-  useActiveChannelActions,
+  useModifyActiveChannel,
   useFavoriteChannelActions,
 } from 'features/channels';
 
@@ -16,7 +16,7 @@ export const useKeyPressHandler = () => {
   const activeChannel = useActiveChannel();
   const {getIndex} = useChannelPointer();
   const activeChannelIndex = getIndex(activeChannel);
-  const {setChannel} = useActiveChannelActions();
+  const {setChannel} = useModifyActiveChannel();
   const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
   const isFavorite = useCheckIsFavorite(activeChannel);
 

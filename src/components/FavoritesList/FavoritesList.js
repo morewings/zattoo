@@ -1,9 +1,10 @@
 import React, {useRef} from 'react';
 import {
-  useChannelActions,
   useVisibleFavorites,
   useActiveFavorite,
   useActivePanel,
+  useModifyActivePanel,
+  useModifyActiveChannel,
 } from 'features/channels';
 import {Channel} from 'components/Channel';
 import {useKeyPressHandler} from './useKeyPressHandler';
@@ -14,7 +15,8 @@ export const FavoritesList = () => {
   const activeChannel = useActiveFavorite();
   const activePanel = useActivePanel();
   const {handleChannelsKeyPress} = useKeyPressHandler();
-  const {setActivePanel, setActiveFavorite} = useChannelActions();
+  const {setFavorite} = useModifyActiveChannel();
+  const setActivePanel = useModifyActivePanel();
   const ref = useRef();
   const handleMouseEnter = () => {
     ref.current.focus();
@@ -42,7 +44,7 @@ export const FavoritesList = () => {
       className={classes.favoritesList}>
       {favorites.map(({id, index}, i) => (
         <Channel
-          onSelect={setActiveFavorite}
+          onSelect={setFavorite}
           rowLength={1}
           id={id}
           nr={index}

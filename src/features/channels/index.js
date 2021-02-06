@@ -1,5 +1,5 @@
 export {reducer as ChannelsReducer} from './reducer';
-export {useActions as useChannelActions} from './actionCreators';
+// export {useActions as useChannelActions} from './actionCreators';
 export {
   useChannelsList,
   useChannelLogo,
@@ -17,5 +17,7 @@ export {
   useSetVisibleChannels,
   useSetVisibleFavorites,
 } from './useVisibleChannelsActions';
-export {useActiveChannelActions} from './useActiveChannelActions';
+export {useModifyActiveChannel} from './useModifyActiveChannel';
 export {useFavoriteChannelActions} from './useFavoriteChannelActions';
+export {useLoadChannelsAction} from './useLoadChannelsAction';
+export {useModifyActivePanel} from './useModifyActivePanel';

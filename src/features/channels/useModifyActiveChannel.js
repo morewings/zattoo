@@ -8,7 +8,7 @@ import {
 } from './selectors';
 import {SET_ACTIVE_CHANNEL, SET_ACTIVE_FAVORITE} from './actionTypes';
 
-export const useActiveChannelActions = () => {
+export const useModifyActiveChannel = () => {
   const dispatch = useDispatch();
   const {getId: getChannelId} = useChannelPointer();
   const {getId: getFavoriteId} = useFavoritePointer();
