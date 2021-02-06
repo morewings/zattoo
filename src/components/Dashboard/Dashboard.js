@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import rawData from 'data/channels.json';
-import {useLoadChannelsAction} from 'features/channels';
+import {useLoadChannels} from 'features/channels';
 import {ChannelsList} from 'components/ChannelsList';
 import {FavoritesList} from 'components/FavoritesList';
 import classes from './Dashboard.module.css';
 
 export const Dashboard = () => {
-  const loadChannels = useLoadChannelsAction();
+  const loadChannels = useLoadChannels();
 
   useEffect(() => {
     loadChannels(rawData.channels);

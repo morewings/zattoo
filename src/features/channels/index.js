@@ -19,5 +19,5 @@ export {
 } from './useAdjustVisible';
 export {useModifyActiveChannel} from './useModifyActiveChannel';
 export {useModifyFavoriteChannels} from './useModifyFavoriteChannels';
-export {useLoadChannelsAction} from './useLoadChannelsAction';
+export {useLoadChannels} from './useLoadChannels';
 export {useModifyActivePanel} from './useModifyActivePanel';
