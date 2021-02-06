@@ -5,7 +5,7 @@ import {
   useModifyActiveChannel,
   useSetVisibleFavorites,
   useFavoritePointer,
-  useFavoriteChannelActions,
+  useModifyFavoriteChannels,
 } from 'features/channels';
 
 const ROW = 1;
@@ -15,7 +15,7 @@ export const useKeyPressHandler = () => {
   const {getIndex} = useFavoritePointer();
   const activeFavoriteIndex = getIndex(activeFavorite);
   const {setActiveFavoriteByIndex} = useModifyActiveChannel();
-  const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
+  const {addFavorite, deleteFavorite} = useModifyFavoriteChannels();
   const isFavorite = useCheckIsFavorite(activeFavorite);
 
   const {adjustVisibleDown, adjustVisibleUp} = useSetVisibleFavorites(ROW);

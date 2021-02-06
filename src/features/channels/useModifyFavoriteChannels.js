@@ -7,7 +7,7 @@ const ROW = 1;
 
 const VISIBLE_AMOUNT = 8;
 
-export const useFavoriteChannelActions = () => {
+export const useModifyFavoriteChannels = () => {
   const dispatch = useDispatch();
   const favorites = useFavorites();
   const {adjustVisibleDown, adjustVisibleUp} = useSetVisibleFavorites(

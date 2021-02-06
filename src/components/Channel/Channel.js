@@ -5,7 +5,7 @@ import {transformNumber} from 'utils/transformNumber';
 import {
   useChannelLogo,
   useChannelName,
-  useFavoriteChannelActions,
+  useModifyFavoriteChannels,
 } from 'features/channels';
 import star from 'images/star.svg';
 import starOutline from 'images/star_outline.svg';
@@ -15,7 +15,7 @@ import classes from './Channel.module.css';
 export const Channel = ({index, id, rowLength, onSelect, isActive}) => {
   const logoUrl = useChannelLogo(id);
   const name = useChannelName(id);
-  const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
+  const {addFavorite, deleteFavorite} = useModifyFavoriteChannels();
   const isFavorite = useCheckIsFavorite(id);
 
   const handleChannelClick = () => {

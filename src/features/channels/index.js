@@ -18,6 +18,6 @@ export {
   useSetVisibleFavorites,
 } from './useVisibleChannelsActions';
 export {useModifyActiveChannel} from './useModifyActiveChannel';
-export {useFavoriteChannelActions} from './useFavoriteChannelActions';
+export {useModifyFavoriteChannels} from './useModifyFavoriteChannels';
 export {useLoadChannelsAction} from './useLoadChannelsAction';
 export {useModifyActivePanel} from './useModifyActivePanel';
