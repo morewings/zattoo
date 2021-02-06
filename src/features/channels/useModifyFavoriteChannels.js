@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux';
 import {ADD_FAVORITE, DELETE_FAVORITE} from 'features/channels/actionTypes';
-import {useSetVisibleFavorites} from './useVisibleChannelsActions';
+import {useSetVisibleFavorites} from './useAdjustVisible';
 import {useFavorites} from './selectors';
 
 const ROW = 1;

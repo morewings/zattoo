@@ -16,7 +16,7 @@ export {
 export {
   useSetVisibleChannels,
   useSetVisibleFavorites,
-} from './useVisibleChannelsActions';
+} from './useAdjustVisible';
 export {useModifyActiveChannel} from './useModifyActiveChannel';
 export {useModifyFavoriteChannels} from './useModifyFavoriteChannels';
 export {useLoadChannelsAction} from './useLoadChannelsAction';
