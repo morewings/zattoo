@@ -39,7 +39,7 @@ export const useModifyActiveChannel = () => {
     }
   };
 
-  const setFavorite = favoriteIndex => {
+  const setActiveFavoriteByIndex = favoriteIndex => {
     const isValid = favoriteIndex >= 0 && favoriteIndex < favoritesLength;
     const channelId = getFavoriteId(favoriteIndex);
     if (isValid) {
@@ -49,6 +49,6 @@ export const useModifyActiveChannel = () => {
 
   return {
     setActiveChannelByIndex,
-    setFavorite,
+    setActiveFavoriteByIndex,
   };
 };

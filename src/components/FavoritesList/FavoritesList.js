@@ -15,7 +15,7 @@ export const FavoritesList = () => {
   const activeChannel = useActiveFavorite();
   const activePanel = useActivePanel();
   const {handleChannelsKeyPress} = useKeyPressHandler();
-  const {setFavorite} = useModifyActiveChannel();
+  const {setActiveFavoriteByIndex} = useModifyActiveChannel();
   const setActivePanel = useModifyActivePanel();
   const ref = useRef();
   const handleMouseEnter = () => {
@@ -44,7 +44,7 @@ export const FavoritesList = () => {
       className={classes.favoritesList}>
       {favorites.map(({id}, i) => (
         <Channel
-          onSelect={setFavorite}
+          onSelect={setActiveFavoriteByIndex}
           rowLength={1}
           id={id}
           index={i}

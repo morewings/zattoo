@@ -14,7 +14,7 @@ export const useKeyPressHandler = () => {
   const activeFavorite = useActiveFavorite();
   const {getIndex} = useFavoritePointer();
   const activeFavoriteIndex = getIndex(activeFavorite);
-  const {setFavorite} = useModifyActiveChannel();
+  const {setActiveFavoriteByIndex} = useModifyActiveChannel();
   const {addFavorite, deleteFavorite} = useFavoriteChannelActions();
   const isFavorite = useCheckIsFavorite(activeFavorite);
 
@@ -23,13 +23,13 @@ export const useKeyPressHandler = () => {
     switch (key) {
       case 'ArrowUp': {
         const nextChannelIndex = prevRow(ROW, activeFavoriteIndex);
-        setFavorite(nextChannelIndex);
+        setActiveFavoriteByIndex(nextChannelIndex);
         adjustVisibleUp(nextChannelIndex);
         break;
       }
       case 'ArrowDown': {
         const nextChannelIndex = nextRow(ROW, activeFavoriteIndex);
-        setFavorite(nextChannelIndex);
+        setActiveFavoriteByIndex(nextChannelIndex);
         adjustVisibleDown(nextChannelIndex);
         break;
       }
